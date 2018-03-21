@@ -1,0 +1,90 @@
+<ion-view title="Upload Cars" id="page4">
+  <ion-content padding="true" class="has-header">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <label class="item item-input">
+      <span class="input-label">Number Plate:</span>
+      <input ng-model="numplate" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Car Make:</span>
+      <input ng-model="carmake" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Car Model:</span>
+      <input ng-model="carmodel" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">MFG Year:</span>
+      <input ng-model="caryear" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Engine CC:</span>
+      <input ng-model="cc" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Transmission:</span>
+      <input ng-model="trans" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Car Mileage:</span>
+      <input ng-model="mileage" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Number of Owners:</span>
+      <input ng-model="numowner" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Last Owner:</span>
+      <input ng-model="lastowner" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Deposit: </span>
+      <input ng-model="deposit" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Loan Amount:</span>
+      <input ng-model="loanamt" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Loan Years:</span>
+      <input ng-model="loanyear" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Monthly:</span>
+      <input ng-model="monthly" type="text" placeholder="">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Price:</span>
+      <input ng-model="price" type="text" placeholder="">
+    </label>
+  </br>
+  <form class="w3-container w3-card-4">
+    <h3>Location:</h3>
+    <select class="w3-select w3-border" name="option" ng-model="location">
+      <option value="" disabled selected>Choose location</option>
+      <option value="1">Pandamaran</option>
+      <option value="2">Kg. Jawa</option>
+    </select>
+    
+    <h3>Description:</h3>
+    <textarea rows="30" cols="40" ng-model="description">
+    </textarea>
+  </form>
+
+  <button ng-click="carfolder(numplate,carmake,carmodel,caryear,cc,trans,mileage,numowner,lastowner,deposit,loanamt,loanyear,monthly,price,description,location); getImage(); reset()" id="uploadImages-button4" class="button button-positive button-block">Upload</button>
+</ion-content>
+</ion-view>

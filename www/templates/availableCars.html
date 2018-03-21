@@ -1,0 +1,110 @@
+<ion-view title="JVM CarMotors" id="page2">
+  <ion-content class="has-header">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <ion-refresher on-refresh="doRefresh()">
+
+    </ion-refresher>
+
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input type="search" placeholder="Search Vehicle" ng-model="searchVehicle">
+    </label>
+    <button class="button button-clear">
+        Cancel
+    </button>
+</div> 
+
+<div class="list card" ng-repeat="item in assetCollection2 | filter:searchVehicle | limitTo:numberOfItemsToDisplay">
+
+    <div class="item item-avatar">
+
+        <img ng-src="{{item.URL}}">
+
+        <h2>{{item.carmake}} {{item.carmodel}} {{item.cc}} ({{item.trans}})</h2>
+
+        <p>{{item.lastUpdated | date: 'medium'}}</p>
+
+    </div>
+
+    <div class="item item-body">
+
+        <img class="full-image" ng-src="{{item.URL}}" ng-click="showImages($index)">
+
+        <p style="text-align:left;">
+            <img ng-src="{{image[0].src}}"/>
+            <a href="#" class="redtext"> RM {{item.price}} </a>
+
+            <span style="float:right;">
+                <img ng-src="{{image3[0].src}}"/>
+                <a href="#" class="subdued"> {{item.caryear}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            </span>
+        </p>
+
+        <p style="text-align:left;">
+            <img ng-src="{{image2[0].src}}"/>
+            <a href="#" class="subdued"> {{item.mileage}} km</a>
+
+            <span style="float:right;">
+                <img ng-src="{{image4[0].src}}"/>
+                <a href="#" class="subdued"> {{item.trans}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            </span>
+        </p>
+
+<!--         <table class="w3-table">
+            <tr>
+              <td>Owners:</td>
+              <td>{{item.numowner}}</td>
+              <td>Last Owner:</td>
+              <td>{{item.lastowner}}</td>
+          </tr>
+          <tr>
+              <td>Deposit:</td>
+              <td>RM {{item.deposit}}</td>
+              <td>Monthly:</td>
+              <td>RM {{item.monthly}}</td>
+          </tr>
+          <tr>
+              <td>Loan Amount:</td>
+              <td>RM {{item.loanamt}}</td>
+              <td>Loan Years:</td>
+              <td>{{item.loanyear}}</td>
+          </tr>
+          <tr>
+              <td>Location:</td>
+              <td>{{item.location}}</td>
+          </tr>
+      </table> -->
+
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+
+    <a class="tab-item" href="#">
+
+        <i class="icon ion-ios-list-outline"></i> View
+
+    </a>
+
+    <a class="tab-item" href="#" ng-click="deleteitem(item.numplate)">
+
+        <i class="icon ion-android-contacts"></i> Delete
+
+    </a>
+
+    <a class="tab-item" href="#">
+
+        <i class="icon ion-share"></i> Share
+
+    </a>
+
+</div>
+
+</div>
+
+</br>
+
+<ion-infinite-scroll on-infinite="addMoreItem()" ng-if="assetCollection2.length > numberOfItemsToDisplay"></ion-infinite-scroll>
+
+</ion-content>
+</ion-view>

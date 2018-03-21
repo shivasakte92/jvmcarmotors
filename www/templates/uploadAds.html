@@ -1,0 +1,26 @@
+<ion-view title="Upload Advertisements" id="page3">
+  <ion-content padding="true" class="has-header">
+  	<button ng-click="getImage()" id="uploadImages-button4" class="button button-positive button-block">Upload</button>
+
+  	<div class="list card" ng-repeat="item in assetCollection3">
+
+     		<div class="item item-body">
+
+                <img class="full-image" ng-src="{{item.URL}}" ng-click="showImages($index)">
+
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+
+                <a class="tab-item" href="#" ng-click="deleteitem(item.URL)">
+
+                    <i class="icon ion-android-contacts"></i> Delete
+
+                </a>
+
+            </div>
+
+            </div>
+
+  </ion-content>
+</ion-view>

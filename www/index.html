@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    
+    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+
+  
+<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDAI9gD-Kpxsk-km-YMa5JJts8TRS00ZCM",
+    authDomain: "myapp-176d4.firebaseapp.com",
+    databaseURL: "https://myapp-176d4.firebaseio.com",
+    projectId: "myapp-176d4",
+    storageBucket: "myapp-176d4.appspot.com",
+    messagingSenderId: "867690478367"
+  };
+  firebase.initializeApp(config);
+</script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    
+    <link href="css/ionic.app.css" rel="stylesheet">
+    
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px; 
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+      .show-list-numbers-and-dots ul{
+        list-style-type: disc;
+        padding-left:40px;
+      }
+      .show-list-numbers-and-dots ol{
+        list-style-type: decimal;
+        padding-left:40px;
+      }
+
+      .image-list-thumb {
+    padding: 2px 2px 2px 2px;
+    height: 100px;
+      }
+       
+      .image-modal {
+          width: 100% !important;
+          height: 100%;
+          top: 0 !important;
+          left: 0 !important;
+      }
+       
+      .transparent {
+          background: rgba(0, 0, 0, 0.8);
+      }
+       
+      .fullscreen-image {
+          max-width: 100%;
+          max-height: 100%;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          overflow: auto;
+          position: fixed;
+          right: 0;
+          top: 0;
+      }
+       
+      .slider {
+          width: 100%;
+          height: 100%;
+      }
+
+      .wide-as-needed {
+        overflow: scroll;
+        white-space: nowrap;
+      }
+
+      .list-card {
+          clear: both;
+          width: 100%;
+          overflow: hidden;
+      }
+
+      .redtext {
+        color: red;
+      }
+      
+    </style>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+    
+     
+    <script src="js/directives.js"></script>
+     
+    <script src="js/services.js"></script>
+    
+
+    <!-- Only required for Tab projects w/ pages in multiple tabs  -->
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+   
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+  <div>
+  <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
+    <ion-side-menu-content drag-content="false">
+      <ion-nav-bar class="bar-assertive">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21" drag-content="false">
+      <ion-header-bar class="bar-assertive">
+        <div class="title">Menu</div>
+      </ion-header-bar>
+      <ion-content ng-controller="menuCtrl" padding="false" class="side-menu-left has-header ">
+        <ion-list id="menu-list3" data-componentid="list3">
+          <ion-item class="item-icon-left" id="menu-list-item3" ui-sref="tabsController.availableCars" menu-close="" data-componentid="list-item3">
+            <i class="icon ion-android-home"></i>Home</ion-item>
+          <ion-item class="item-icon-left dark" id="menu-list-item7" ng-click="logout()" ui-sref="login" menu-close="" data-componentid="list-item7">
+            <i class="icon ion-log-out"></i>Logout</ion-item>
+          <!-- <ion-item class="item-icon-left dark" id="menu-list-item4" data-componentid="list-item4">
+            <i class="icon ion-android-favorite-outline"></i>My Favourite</ion-item>
+          <ion-item class="item-icon-left dark" id="menu-list-item8" ui-sref="contactUs" menu-close="" data-componentid="list-item8">
+            <i class="icon ion-android-contact"></i>Contact Us</ion-item>
+          <ion-item class="item-icon-left dark" id="menu-list-item6" ui-sref="support" menu-close="" data-componentid="list-item6">
+            <i class="icon ion-information-circled"></i>Support</ion-item> -->
+        </ion-list>
+      </ion-content>
+    </ion-side-menu>
+  </ion-side-menus>
+</div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "name": "myapp",
+  "app_id": "",
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ]
+}
